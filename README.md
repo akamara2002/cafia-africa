@@ -2,11 +2,47 @@
 
 Center for Africa Financial Inclusion and Advancement (CAFIA) - An integrated solutions platform for financial inclusion and economic resilience across Africa.
 
-## Quick Start - Local Development
+## 📁 Project Structure
+
+This project is organized into separate frontend and backend directories:
+
+```
+cafia-africa/
+├── frontend/          # Next.js application
+├── backend/           # Python scripts & data import
+└── RUN_PROJECT.md     # Complete setup and run instructions
+```
+
+## 🚀 Quick Start
+
+### Frontend (Next.js)
+
+```bash
+cd frontend
+npm install          # First time only
+npm run dev          # Start development server
+```
+
+Access at: http://localhost:3000
+
+### Backend (Excel to PostgreSQL)
+
+```bash
+cd backend
+./scripts/run_import.sh    # Import Excel data to PostgreSQL
+```
+
+**📚 For detailed instructions, see [RUN_PROJECT.md](./RUN_PROJECT.md)**
+
+---
+
+## Quick Start - Local Development (Legacy Instructions)
 
 ### Prerequisites
 - Node.js 18+ (Download: https://nodejs.org/)
 - npm or yarn package manager
+- Python 3.9+ (for backend)
+- PostgreSQL (for data import)
 
 ### Installation Steps
 
@@ -14,15 +50,17 @@ Center for Africa Financial Inclusion and Advancement (CAFIA) - An integrated so
    - Click the "Download ZIP" button in v0 or clone from GitHub
    - Extract the ZIP file to your preferred location
 
-2. **Install Dependencies**
+2. **Frontend Setup**
    \`\`\`bash
-   cd cafia-africa
+   cd frontend
    npm install
+   npm run dev
    \`\`\`
 
-3. **Run Development Server**
+3. **Backend Setup (Optional - for data import)**
    \`\`\`bash
-   npm run dev
+   cd backend
+   ./scripts/run_import.sh
    \`\`\`
 
 4. **Open in Browser**

@@ -1,0 +1,7 @@
+
+# Secrets
+.env
+.env.*
+backend/.env
+frontend/.env.local
+backend/.venv/
