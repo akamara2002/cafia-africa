@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "prisma generate && next build",
     "dev": "next dev --webpack",
     "dev:turbopack": "sh -c 'ulimit -n 65536 2>/dev/null; exec next dev'",
     "lint": "eslint .",
+    "postinstall": "prisma generate",
     "start": "next start"
   },
   "dependencies": {
