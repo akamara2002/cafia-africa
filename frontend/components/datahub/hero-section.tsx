@@ -116,7 +116,7 @@ export default function HeroSection({ totalBusinesses, totalStreets }: HeroSecti
   }
 
   return (
-    <section className="relative h-[30vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <section className="relative min-h-[min(42vh,22rem)] sm:min-h-[36vh] md:h-[30vh] md:min-h-0 flex flex-col items-center justify-start md:justify-center pt-[7rem] pb-12 sm:pt-28 md:pt-0 sm:pb-10 md:pb-0 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Particle Canvas Background */}
       <canvas
         ref={canvasRef}
@@ -124,10 +124,10 @@ export default function HeroSection({ totalBusinesses, totalStreets }: HeroSecti
         style={{ willChange: 'contents' }}
       />
 
-      {/* Content */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Content — extra top inset on mobile so headline clears fixed navbar (z-50) */}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full md:flex md:items-center md:justify-center md:flex-1">
         <motion.div
-          className="text-center"
+          className="text-center w-full"
           initial={{ opacity: 0, y: 30 }}
           animate={headlineVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

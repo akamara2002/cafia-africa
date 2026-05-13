@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { fadeUp, staggerContainer } from "@/lib/motion/variants"
 
 const currencies = ["$", "₵", "€", "₦", "£", "¥"]
@@ -98,10 +99,28 @@ export default function HeroSection() {
 
         <motion.h2
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-bold text-yellow-400 mb-12 tracking-wide drop-shadow-lg"
+          className="text-3xl md:text-5xl font-bold text-yellow-400 mb-10 md:mb-12 tracking-wide drop-shadow-lg"
         >
           From Invisible to Investable
         </motion.h2>
+
+        <motion.div variants={fadeUp} className="mb-10">
+          <Link
+            href="/research-publications"
+            className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-cyan-300/90 bg-gradient-to-r from-cyan-500/20 to-blue-600/30 px-8 py-3.5 sm:px-10 sm:py-4 text-base sm:text-lg font-bold text-white shadow-[0_8px_30px_rgba(6,182,212,0.35)] transition-all duration-300 hover:border-yellow-300 hover:from-cyan-400/30 hover:to-blue-500/40 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(250,204,21,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+          >
+            Explore Research
+            <ArrowRight className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
+          </Link>
+          <p className="mt-3 text-sm sm:text-base text-blue-100/90">
+            <Link
+              href="/research-publications"
+              className="font-medium text-cyan-200 underline-offset-4 hover:text-yellow-300 hover:underline"
+            >
+              View publications and policy reports
+            </Link>
+          </p>
+        </motion.div>
 
         <motion.div
           variants={fadeUp}

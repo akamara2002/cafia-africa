@@ -106,46 +106,51 @@ export default function ResearchPublicationsContent() {
 
   return (
     <main className="min-h-screen pt-24 bg-gradient-to-b from-white to-blue-50">
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        <div className="container max-w-screen-xl mx-auto px-6 relative z-10">
-          <p className="text-sm uppercase tracking-widest text-cyan-300 mb-4">Research and Publications</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance leading-tight">{REPORT_TITLE}</h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-3xl leading-relaxed">
-            A survey of businesses across commercial corridors in Western Area Urban and Rural, Sierra Leone (2026).
-            CAFIA Policy Report Vol.1, with evidence on registration, account ownership, digital payments, and barriers
-            facing predominantly micro enterprises.
-          </p>
+      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
+        <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10">
+          <p className="text-sm uppercase tracking-widest text-cyan-300 mb-3 sm:mb-4">Research and Publications</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-balance leading-tight">{REPORT_TITLE}</h1>
 
           {!isUnlocked ? (
-            <form onSubmit={handleUnlock} className="mt-10 max-w-2xl bg-white/10 border border-white/20 rounded-2xl p-6">
-              <p className="text-sm md:text-base text-blue-100 mb-4">
-                Enter your email to unlock and download this report. We use this to track report access.
-              </p>
-              <p className="text-xs text-blue-200/90 mb-3">
-                We also request browser location (with your permission) to capture approximate download location.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+            <form
+              onSubmit={handleUnlock}
+              className="max-w-2xl bg-white/12 border border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md"
+            >
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                <p className="text-base sm:text-lg md:text-xl text-white font-semibold leading-snug">
+                  Enter your email to unlock and download this report. We use this to track report access.
+                </p>
+                <p className="text-sm sm:text-base text-blue-50/95 leading-relaxed">
+                  We also request browser location (with your permission) to capture approximate download location.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-4 sm:items-stretch">
+                <label htmlFor="report-email" className="sr-only">
+                  Email address
+                </label>
                 <input
+                  id="report-email"
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  placeholder="you@example.com"
-                  className="flex-1 rounded-full px-5 py-3 text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                  placeholder="Your email address"
+                  autoComplete="email"
+                  className="flex-1 min-h-[3rem] rounded-2xl sm:rounded-full px-5 sm:px-6 py-3.5 text-base sm:text-lg text-slate-900 bg-white placeholder:text-slate-400 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-200 shadow-inner"
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex justify-center items-center rounded-full bg-yellow-400 text-slate-900 px-8 py-3 font-semibold hover:bg-yellow-300 transition-colors shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex justify-center items-center min-h-[3rem] rounded-2xl sm:rounded-full bg-yellow-400 text-slate-900 px-8 sm:px-10 py-3.5 text-base sm:text-lg font-bold hover:bg-yellow-300 transition-colors shadow-lg disabled:opacity-70 disabled:cursor-not-allowed shrink-0"
                 >
                   {isSubmitting ? "Unlocking..." : "Unlock Report"}
                 </button>
               </div>
-              {errorMessage ? <p className="mt-3 text-sm text-red-200">{errorMessage}</p> : null}
-              {locationMessage ? <p className="mt-2 text-xs text-blue-100">{locationMessage}</p> : null}
+              {errorMessage ? <p className="mt-4 text-sm text-red-200">{errorMessage}</p> : null}
+              {locationMessage ? <p className="mt-3 text-sm text-blue-100">{locationMessage}</p> : null}
             </form>
           ) : (
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8">
               <button
                 onClick={handleDownload}
                 className="inline-flex justify-center items-center rounded-full bg-yellow-400 text-slate-900 px-8 py-3 font-semibold hover:bg-yellow-300 transition-colors shadow-lg"
