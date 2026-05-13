@@ -117,7 +117,7 @@ export default function HeroSection() {
               href="/research-publications"
               className="font-medium text-cyan-200 underline-offset-4 hover:text-yellow-300 hover:underline"
             >
-              View publications and policy reports
+              View our research report
             </Link>
           </p>
         </motion.div>
