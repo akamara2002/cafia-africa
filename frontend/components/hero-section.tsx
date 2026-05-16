@@ -23,7 +23,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"
+      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 pb-8 pt-[var(--nav-offset)] sm:pb-10"
     >
       {/* Background Image with Parallax */}
       <motion.div style={{ y, scale }} className="absolute inset-0 z-0">

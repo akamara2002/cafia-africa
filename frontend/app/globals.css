@@ -37,6 +37,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /*
+    Clearance for fixed navbar (logo row + py-4 + buffer).
+    safe-area covers notched phones when viewport-fit=cover is set.
+  */
+  --nav-offset: calc(env(safe-area-inset-top, 0px) + 6.75rem);
 }
 
 .dark {
@@ -126,6 +131,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-offset);
 }
 
 @media (prefers-reduced-motion: reduce) {
